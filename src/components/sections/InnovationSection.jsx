@@ -4,7 +4,7 @@ import MobileProjectCard from "./MobileProjectCard";
 // Project Images
 import sanjeevaniImg from "../../assets/img/portfolio/womens_safety_ai.png";
 import callingImg from "../../assets/img/portfolio/chetanalabs.png";
-import sarathiImg from "../../assets/img/portfolio/sarathi_astra.png";
+import droneImg from "../../assets/img/portfolio/sarathi_astra.png"; // Placeholder for drone project
 
 const INNOVATIONS = [
     {
@@ -13,7 +13,9 @@ const INNOVATIONS = [
         img: sanjeevaniImg,
         desc: "A multi-tenant healthcare delivery dashboard optimizing pharmaceutical supply chains.",
         tags: ["React", "Safety AI", "Analytics"],
-        color: "#e87532"
+        color: "#e87532",
+        github: "https://github.com/Samay-AI-Verse",
+        live: "#"
     },
     {
         title: "Calling Assistant",
@@ -21,15 +23,19 @@ const INNOVATIONS = [
         img: callingImg,
         desc: "AI-powered conversational agent for HR automation, screening, and interview scheduling.",
         tags: ["Vapi AI", "NLP", "HR Tech"],
-        color: "#00c9ff"
+        color: "#00c9ff",
+        github: "https://github.com/Samay-AI-Verse",
+        live: "#"
     },
     {
-        title: "Sarathi Astra",
-        cat: "Advanced RAG System",
-        img: sarathiImg,
-        desc: "Intelligent document interaction engine providing context-aware Q&A and semantic extraction.",
-        tags: ["LangChain", "Vector DB", "LLMs"],
-        color: "#8e2de2"
+        title: "Autonomous Drone",
+        cat: "Edge AI & Computer Vision",
+        img: droneImg, 
+        desc: "Autonomous aerial system featuring real-time object detection and intelligent pathfinding.",
+        tags: ["YOLOv8", "OpenCV", "Robotics"],
+        color: "#8e2de2",
+        github: "https://github.com/Samay-AI-Verse",
+        live: "#"
     }
 ];
 

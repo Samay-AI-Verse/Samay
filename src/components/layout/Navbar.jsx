@@ -57,7 +57,7 @@ export default function Navbar({ onMenuClick, onBookDemo }) {
                     color: var(--nav-highlight);
                 }
             `}</style>
-            <div className="flex items-center gap-8">
+            <div className="flex items-center">
                 <button
                     className="nav-link"
                     onClick={onMenuClick}
@@ -68,13 +68,25 @@ export default function Navbar({ onMenuClick, onBookDemo }) {
                 >
                     MENU
                 </button>
+            </div>
+
+            {/* Centered Logo on Scroll */}
+            <div 
+                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+                style={{
+                    opacity: scrolled ? 1 : 0,
+                    transform: `translate(-50%, ${scrolled ? '-50%' : '0%'})`,
+                    transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+                }}
+            >
                 <a
                     href="#"
-                    className="nav-link logo-text font-black text-white"
+                    className="nav-link logo-text font-black"
                     style={{
-                        opacity: scrolled ? 1 : 0,
-                        transform: scrolled ? 'translateX(0)' : 'translateX(-20px)',
-                        pointerEvents: scrolled ? 'auto' : 'none'
+                        pointerEvents: scrolled ? 'auto' : 'none',
+                        display: 'block',
+                        color: 'var(--nav-highlight)',
+                        fontSize: '1.2rem',
                     }}
                 >
                     SAMAY

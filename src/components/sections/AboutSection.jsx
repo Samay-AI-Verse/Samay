@@ -15,30 +15,42 @@ export default function AboutSection() {
                 </div>
 
                 <div className="about-anim space-y-8">
-                    <div>
-                        <span className="text-[#e87532] font-outfit font-bold tracking-widest uppercase text-sm">Who I Am</span>
-                        <h2 className="text-4xl md:text-5xl font-outfit font-black mt-2 leading-none">
-                            Bridging Theory & <span className="text-[#e87532]">Silicon</span>
-                        </h2>
-                    </div>
-
-                    <div className="space-y-6 text-lg md:text-xl opacity-80 leading-relaxed font-outfit font-light">
+                    <div className="space-y-6 text-base md:text-lg opacity-85 leading-relaxed font-outfit">
                         <p>
-                            Hello! I’m <strong className="text-[#e87532] font-semibold">Samay</strong>, a dedicated <strong>AI Engineer & Data Scientist</strong>. 
-                            I'm currently a 3rd-year B.Tech student at DBATU with a deep fascination for autonomous systems and cognitive computing.
+                            I’m <strong className="text-[#e87532] font-semibold">Samay Santosh Powade</strong>, an AI Engineer focused on building real-world AI systems using LLMs and retrieval-based workflows.
                         </p>
                         <p>
-                            My expertise lies in building end-to-end AI applications—from scraping and cleaning data to training 
-                            state-of-the-art models and deploying them into production. I specialize in <b>Generative AI, Large Language Models (LLMs), and Computer Vision.</b>
+                            I develop applications that connect conversational AI with structured data and operational processes, turning AI capabilities into usable systems rather than just prototypes.
+                        </p>
+                        
+                        <div className="py-2 space-y-3">
+                            <p className="text-[#e87532] text-xs font-black tracking-widest uppercase">Key Implementations:</p>
+                            <ul className="space-y-3 list-none">
+                                {[
+                                    "A RAG-based document system for querying private data",
+                                    "A voice-based AI assistant with end-to-end speech and NLP pipeline",
+                                    "Sanjeevani — AI-powered pharmacy system managing orders, refills & inventory"
+                                ].map((item, i) => (
+                                    <li key={i} className="flex items-start gap-3">
+                                        <i className="ri-checkbox-circle-fill text-[#e87532] mt-1 opacity-60" />
+                                        <span className="text-white/80">{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <p>
+                            I work across the full pipeline — from designing AI workflows and integrating models to building backend systems that support real-world use.
+                        </p>
+                        
+                        <p className="pt-2 italic text-[#e87532]/80 text-sm font-medium">
+                            Interested in building production-ready AI systems. Open to AI Engineering internships and collaborations.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <a href="assets/pdf/Samay copy.pdf" download className="px-8 py-4 bg-transparent border border-[#e87532]/40 rounded-xl font-bold font-outfit flex items-center gap-3 hover:bg-[#e87532] hover:text-white transition-all">
-                            <i className="ri-download-line text-xl" /> AI Resume
-                        </a>
-                        <a href="assets/pdf/Samay Full stack.pdf" download className="px-8 py-4 bg-transparent border border-white/20 rounded-xl font-bold font-outfit flex items-center gap-3 hover:bg-white hover:text-black transition-all">
-                            <i className="ri-download-line text-xl" /> Full Stack Resume
+                        <a href="assets/pdf/Samay copy.pdf" download className="px-10 py-5 bg-[#e87532] text-white rounded-xl font-bold font-outfit flex items-center gap-3 hover:bg-[#c65e25] transition-all shadow-[0_10px_30px_rgba(232,117,50,0.3)]">
+                            <i className="ri-download-line text-2xl" /> Download AI Resume
                         </a>
                     </div>
                 </div>

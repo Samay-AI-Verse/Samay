@@ -1,16 +1,14 @@
-import bgImage from "../../assets/img/person/actual image.png"; // Using Samay's image as subtle bg
-import HoverGrid from "../effects/HoverGrid";
+import React from "react";
+import bgImage from "../../assets/img/my images/WhatsApp Image 2026-03-26 at 5.23.15 PM.jpeg";
+import LightingEffect from "../effects/LightingEffect";
 
-/**
- * LandingHero — LAYER 1 (z-10)
- */
 export default function LandingHero() {
   return (
     <div
       className="landing-content absolute inset-0 z-10 overflow-hidden"
       style={{ background: 'linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%)' }}
     >
-      <div className="main w-full h-full rotate-[-10deg] scale-[1.7] origin-center">
+      <div className="main w-full h-full origin-center">
         <div
           className="landing w-full h-full relative"
           style={{ background: 'linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%)' }}
@@ -33,19 +31,26 @@ export default function LandingHero() {
             borderRadius: '50%', pointerEvents: 'none', zIndex: 1,
           }} />
 
-          {/* BG image overlay - Improved with better contrast and opacity */}
-          <div style={{
-            position: 'absolute', inset: 0, zIndex: 2,
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover', backgroundPosition: 'center',
-            opacity: 0.2, mixBlendMode: 'screen',
-            filter: 'grayscale(0.5) contrast(1.1)',
-          }} />
+          {/* Single BG Image Overlay - Optimized for "Full Image" view */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              zIndex: 2,
+              backgroundImage: `url(${bgImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center 60%',
+              opacity: 0.5,
+              mixBlendMode: 'screen',
+              filter: 'grayscale(0.15) contrast(1.2)',
+              pointerEvents: 'none',
+            }}
+          />
 
           {/* Giant brand title - Centered */}
           <div className="hero-text" style={{
             position: 'absolute',
-            top: '40%',
+            top: '42%',
             left: '50%',
             transform: 'translate(-50%, -50%)',
             zIndex: 10,
@@ -61,6 +66,19 @@ export default function LandingHero() {
             }}>
               Samay
             </h1>
+            <p style={{
+              fontFamily: "'Outfit', sans-serif",
+              fontWeight: 700,
+              fontSize: 'clamp(0.8rem, 2.5vw, 1.8rem)',
+              color: '#e87532',
+              textTransform: 'uppercase',
+              letterSpacing: '0.4em',
+              marginTop: '0.5rem',
+              opacity: 0.8,
+              filter: 'drop-shadow(0 4px 10px rgba(0,0,0,0.3))'
+            }}>
+              AI Engineer
+            </p>
           </div>
 
           {/* Relocated Taglines - Bottom Right */}
@@ -88,7 +106,7 @@ export default function LandingHero() {
         </div>
       </div>
 
-      <HoverGrid />
+      <LightingEffect />
     </div>
   );
 }

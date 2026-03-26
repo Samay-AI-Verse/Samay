@@ -28,38 +28,38 @@ export default function FeaturesSection() {
             <div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-16 px-10">
 
                 {/* ── Left Copy ── */}
-                <div className="text-left space-y-6">
-                    <p style={{
-                        color: '#e87532', fontSize: '0.7rem', fontWeight: 700,
-                        letterSpacing: '0.18em', textTransform: 'uppercase',
-                        margin: 0, fontFamily: "'Outfit', sans-serif", opacity: 0.9,
-                    }}>AI & MACHINE LEARNING</p>
-
-                    <div style={{ margin: '6px 0 2px' }}>
+                <div className="text-left space-y-4">
+                    <div style={{ margin: '0 0 0px' }}>
                         <span style={{
                             fontFamily: "'Outfit', sans-serif", fontWeight: 900,
-                            fontSize: 'clamp(1rem, 2vw, 1.5rem)',
+                            fontSize: 'clamp(1.4rem, 2.5vw, 2.2rem)',
                             color: '#f4ede6', letterSpacing: '0.04em',
                         }}>Samay</span>
                         <sup style={{ fontSize: '0.5em', color: '#e87532', opacity: 0.7, marginLeft: '2px', verticalAlign: 'super' }}>™</sup>
                     </div>
 
+                    <p style={{
+                        color: '#e87532', fontSize: '1rem', fontWeight: 800,
+                        letterSpacing: '0.15em', textTransform: 'uppercase',
+                        margin: '10px 0', fontFamily: "'Outfit', sans-serif"
+                    }}>
+                        AI Engineer
+                    </p>
+
                     <h2 style={{
                         fontFamily: "'Outfit', sans-serif", fontWeight: 900,
-                        fontSize: 'clamp(2rem, 4vw, 3.6rem)',
-                        color: '#f4ede6', margin: 0, lineHeight: 1.05, letterSpacing: '-0.02em',
+                        fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
+                        color: '#f4ede6', margin: '0 0 20px 0', lineHeight: 1.1, letterSpacing: '-0.02em',
                     }}>
-                        Crafting Intelligence<br />
-                        <span style={{ fontFamily: "Georgia, serif", fontStyle: 'italic', fontWeight: 700, color: '#e87532' }}>
-                            From Data to Deployment
-                        </span>
+                        Building Intelligence.<br />
+                        <span style={{ color: '#e87532' }}>Engineered for Scale.</span>
                     </h2>
 
                     <p style={{
-                        color: '#f4ede6', opacity: 0.75, fontSize: '1rem', fontWeight: 400,
-                        lineHeight: 1.7, fontFamily: "'Outfit', sans-serif", maxWidth: '460px', margin: 0,
+                        color: '#f4ede6', opacity: 0.8, fontSize: '1.1rem', fontWeight: 400,
+                        lineHeight: 1.6, fontFamily: "'Outfit', sans-serif", maxWidth: '500px', margin: 0,
                     }}>
-                        Architecting scalable neural systems. From transformer-based LLM orchestration to high-throughput compute-vision inference. I build the technical backbone that powers autonomous intelligence.
+                        I specialize in building smart systems with **LLMs** and **Computer Vision**. From data pipelines to live deployments, I turn complex AI research into real-world impact.
                     </p>
 
                     {/* Step pills */}
