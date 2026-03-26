@@ -119,23 +119,27 @@ export default function Sidebar({ isOpen, onClose }) {
                             Crafting Intelligence.
                         </span>
                         <a
-                            href="mailto:samaypowade23@gmail.com"
+                            href="mailto:samaypowade9@gmail.com"
                             style={{ color: "#f4ede6", opacity: 0.65, fontSize: "0.62rem", fontWeight: 500, letterSpacing: "0.04em", textDecoration: "none", fontFamily: "'Outfit', sans-serif", transition: "opacity 0.2s" }}
                             onMouseEnter={e => e.currentTarget.style.opacity = 1}
                             onMouseLeave={e => e.currentTarget.style.opacity = 0.65}
                         >
-                            samaypowade23@gmail.com
+                            samaypowade9@gmail.com
                         </a>
                     </div>
 
                     <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "7px" }}>
-                        {["LinkedIn", "GitHub", "Twitter"].map(name => (
-                            <a key={name} href="#"
+                        {[
+                            { name: "LinkedIn", href: "https://www.linkedin.com/in/samay-p-103259269/" },
+                            { name: "GitHub", href: "https://github.com/Samay-AI-Verse" },
+                            { name: "Hugging Face", href: "https://huggingface.co/Samay-AI-Verse" }
+                        ].map(link => (
+                            <a key={link.name} href={link.href} target="_blank"
                                 style={{ ...linkBase, opacity: 0.6 }}
                                 onMouseEnter={e => { e.currentTarget.style.opacity = 1; e.currentTarget.style.color = "#e87532"; }}
                                 onMouseLeave={e => { e.currentTarget.style.opacity = 0.6; e.currentTarget.style.color = "#f4ede6"; }}
                             >
-                                {name}
+                                {link.name}
                             </a>
                         ))}
                     </div>

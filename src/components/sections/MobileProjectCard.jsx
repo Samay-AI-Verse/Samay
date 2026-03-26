@@ -34,20 +34,17 @@ export default function MobileProjectCard({ img, title, cat, tags, desc, color =
 
                     {/* Action Links */}
                     <div className="mt-auto grid grid-cols-2 gap-3 pt-4 border-t border-white/5">
-                        <a href={github} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 py-3 rounded-2xl bg-white/5 border border-white/10 text-[0.65rem] font-bold tracking-widest uppercase hover:bg-white/10 transition-all">
-                            <i className="ri-github-line text-lg" />
+                        <a href={github} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1.5 py-3 rounded-2xl bg-white/5 border border-white/10 text-[0.62rem] font-black tracking-[0.05em] uppercase hover:bg-white/10 transition-all">
+                            <i className="ri-github-fill text-base" />
                             GitHub
                         </a>
-                        <a href={live} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 py-3 rounded-2xl bg-white/10 text-[0.65rem] font-bold tracking-widest uppercase hover:bg-[#e87532] transition-all" style={{ border: `1px solid ${color}` }}>
-                            <i className="ri-external-link-line text-lg" />
-                            Live
+                        <a href={live} target="_blank" rel="noreferrer" className="flex items-center justify-center gap-1.5 py-3 rounded-2xl bg-white/10 text-[0.62rem] font-black tracking-[0.05em] uppercase hover:bg-[#e87532] transition-all" style={{ border: `1px solid ${color}` }}>
+                            <i className="ri-information-line text-base" />
+                            Get More Info
                         </a>
                     </div>
                 </div>
             </div>
-
-            {/* Notch - Simplified */}
-            <div className="absolute top-[22px] left-1/2 -translate-x-1/2 w-20 h-5 bg-[#0a0a0a] rounded-b-xl z-20 shadow-inner" />
         </div>
     );
 }

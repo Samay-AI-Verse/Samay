@@ -19,6 +19,7 @@ export function useSectionAnimations(showContent) {
             ".innovation-anim",
             ".project-anim",
             ".cert-anim",
+            ".crew-anim",
             ".footer-anim",
         ];
 
@@ -40,5 +41,11 @@ export function useSectionAnimations(showContent) {
                 }
             );
         });
+        
+        // Ensure ScrollTrigger recalculates after everything is added
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+        }, 500);
+
     }, [showContent]);
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import bgImage from "../../assets/img/my images/WhatsApp Image 2026-03-26 at 5.23.15 PM.jpeg";
+import bgImage from "../../assets/img/my images/SGGS.jpeg";
 import LightingEffect from "../effects/LightingEffect";
 
 export default function LandingHero() {

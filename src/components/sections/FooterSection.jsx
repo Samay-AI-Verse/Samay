@@ -4,19 +4,19 @@ const NAV_COLS = [
     {
         heading: "Expertise",
         links: [
-            { name: "Generative AI", href: "#features-section" },
-            { name: "Machine Learning", href: "#features-section" },
-            { name: "Computer Vision", href: "#features-section" },
-            { name: "ML Operations", href: "#features-section" },
+            { name: "AI Engineer", href: "#features-section" },
+            { name: "ML Engineering", href: "#features-section" },
+            { name: "Backend Architecture", href: "#features-section" },
+            { name: "Full Stack Systems", href: "#features-section" },
         ],
     },
     {
-        heading: "Portfolio",
+        heading: "Projects",
         links: [
-            { name: "ChetanaLabs", href: "#delivery-section" },
-            { name: "Sarathi Astra", href: "#delivery-section" },
-            { name: "Trinetra Drone", href: "#delivery-section" },
-            { name: "Loan Prediction", href: "#delivery-section" },
+            { name: "Sanjeevani AI", href: "https://shivanyarxai.netlify.app/" },
+            { name: "Calling Assistant", href: "#innovation-section" },
+            { name: "Trinetra Drone", href: "#innovation-section" },
+            { name: "RAG Document Hub", href: "#innovation-section" },
         ],
     },
     {
@@ -24,7 +24,9 @@ const NAV_COLS = [
         links: [
             { name: "GitHub", href: "https://github.com/Samay-AI-Verse" },
             { name: "LinkedIn", href: "https://www.linkedin.com/in/samay-p-103259269" },
-            { name: "Twitter", href: "https://x.com/SPowade1017" },
+            { name: "Hugging Face", href: "https://huggingface.co/Samay-AI-Verse" },
+            { name: "LeetCode", href: "https://leetcode.com/u/Samay-AI-Verse/" },
+            { name: "Instagram", href: "https://www.instagram.com/samay__.23/" },
         ],
     },
 ];
@@ -36,7 +38,7 @@ const TEXT = {
 
 export default function FooterSection() {
     return (
-        <section id="footer-section" style={{
+        <section id="footer-section" className="footer-section-anim" style={{
             background: "#0a0a0a",
             position: "relative",
             overflow: "hidden",
@@ -70,7 +72,7 @@ export default function FooterSection() {
                     <p style={{ ...TEXT, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", opacity: 0.5, margin: "0 0 12px", lineHeight: 1.6 }}>
                         READY TO COLLABORATE?<br />REACH OUT FOR AI INNOVATIONS:
                     </p>
-                    <a href="mailto:samaypowade23@gmail.com" style={{
+                    <a href="mailto:samaypowade9@gmail.com" style={{
                         ...TEXT, fontSize: "clamp(0.9rem, 1.8vw, 1.4rem)", fontWeight: 700, textDecoration: "none",
                         display: "block", marginBottom: "28px", transition: "color 0.2s",
                     }}

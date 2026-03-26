@@ -1,5 +1,6 @@
 import React from "react";
 import personalImg from "../../assets/img/person/actual image.png";
+import resumePdf from "../../assets/img/Resume/samay.pdf";
 
 export default function AboutSection() {
     return (
@@ -16,41 +17,69 @@ export default function AboutSection() {
 
                 <div className="about-anim space-y-8">
                     <div className="space-y-6 text-base md:text-lg opacity-85 leading-relaxed font-outfit">
-                        <p>
-                            I’m <strong className="text-[#e87532] font-semibold">Samay Santosh Powade</strong>, an AI Engineer focused on building real-world AI systems using LLMs and retrieval-based workflows.
-                        </p>
-                        <p>
-                            I develop applications that connect conversational AI with structured data and operational processes, turning AI capabilities into usable systems rather than just prototypes.
-                        </p>
+                        <div>
+                            <span className="text-[#e87532] font-outfit font-bold tracking-widest uppercase text-xs">Origin & Focus</span>
+                            <h2 className="text-3xl md:text-5xl font-outfit font-black mt-1 leading-none">
+                                Samay Santosh <span className="text-[#e87532]">Powade</span>
+                            </h2>
+                        </div>
                         
-                        <div className="py-2 space-y-3">
-                            <p className="text-[#e87532] text-xs font-black tracking-widest uppercase">Key Implementations:</p>
-                            <ul className="space-y-3 list-none">
+                        <div className="space-y-4">
+                            <p className="text-white/90 leading-relaxed font-outfit">
+                                I’m an <strong className="text-[#e87532] font-semibold">AI Engineer</strong> focused on building real-world AI systems using LLMs and retrieval-based workflows. I develop applications that connect conversational AI with structured data, turning prototypes into production-ready systems.
+                            </p>
+                            
+                            <p className="text-white/80 leading-relaxed font-outfit text-sm">
+                                My core work includes:
+                            </p>
+                            <ul className="space-y-3 pl-2">
                                 {[
-                                    "A RAG-based document system for querying private data",
-                                    "A voice-based AI assistant with end-to-end speech and NLP pipeline",
-                                    "Sanjeevani — AI-powered pharmacy system managing orders, refills & inventory"
+                                    { t: "RAG Intel Engine", d: "High-density document system for querying private data with context-aware retrieval." },
+                                    { t: "Voice AI Pipeline", d: "End-to-end speech and NLP automation for real-time conversational agents." },
+                                    { t: "Sanjeevani AI OS", d: "Integrated pharmacy operating system for managing orders, refills, and inventory." }
                                 ].map((item, i) => (
-                                    <li key={i} className="flex items-start gap-3">
-                                        <i className="ri-checkbox-circle-fill text-[#e87532] mt-1 opacity-60" />
-                                        <span className="text-white/80">{item}</span>
+                                    <li key={i} className="flex gap-4 group/li">
+                                        <div className="w-1 h-1 rounded-full bg-[#e87532] mt-2 group-hover:scale-150 transition-transform" />
+                                        <div>
+                                            <p className="text-white font-bold text-xs uppercase tracking-wider">{item.t}</p>
+                                            <p className="text-xs text-white/50 font-light mt-0.5">{item.d}</p>
+                                        </div>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        <p>
-                            I work across the full pipeline — from designing AI workflows and integrating models to building backend systems that support real-world use.
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-white/5">
+                            <div className="space-y-1">
+                                <p className="text-[#e87532] text-[0.6rem] font-black tracking-widest uppercase">The Focus:</p>
+                                <p className="text-xs text-white/70">Agentic Workflows & Backend Reliability</p>
+                            </div>
+                            <div className="space-y-1">
+                                <p className="text-[#e87532] text-[0.6rem] font-black tracking-widest uppercase">The Stack:</p>
+                                <p className="text-xs text-white/70">FastAPI, Python, AWS, Docker</p>
+                            </div>
+                        </div>
+
+                        <p className="text-sm text-white/60 font-outfit leading-relaxed italic border-l-2 border-[#e87532] pl-4">
+                            I work across the full pipeline — from designing AI workflows to building the high-concurrency backend systems that support real-world use.
                         </p>
                         
-                        <p className="pt-2 italic text-[#e87532]/80 text-sm font-medium">
-                            Interested in building production-ready AI systems. Open to AI Engineering internships and collaborations.
+                        <p className="text-[#e87532] text-sm font-bold tracking-tight">
+                            Open to AI Engineering internships and collaborations.
+                        </p>
+
+                        <p className="pt-4 border-t border-white/5">
+                            I don't just build models; I build **systems**. From Sanjeevani's pharmacy automation to Trinetra's aerial intelligence, my objective is to translate cutting-edge AI research into production-ready software that solves practical, large-scale problems.
+                        </p>
+                        
+                        <p className="italic text-[#e87532]/80 text-sm font-medium">
+                            Currently exploring opportunities for AI Engineering internships and large-scale AI research collaborations.
                         </p>
                     </div>
 
                     <div className="flex flex-wrap gap-4 pt-4">
-                        <a href="assets/pdf/Samay copy.pdf" download className="px-10 py-5 bg-[#e87532] text-white rounded-xl font-bold font-outfit flex items-center gap-3 hover:bg-[#c65e25] transition-all shadow-[0_10px_30px_rgba(232,117,50,0.3)]">
-                            <i className="ri-download-line text-2xl" /> Download AI Resume
+                        <a href={resumePdf} target="_blank" rel="noreferrer" className="px-10 py-5 bg-[#e87532] text-white rounded-xl font-bold font-outfit flex items-center gap-3 hover:bg-[#c65e25] transition-all shadow-[0_10px_30px_rgba(232,117,50,0.3)] group/btn">
+                            <i className="ri-external-link-line text-2xl group-hover:translate-y-1 transition-transform" /> View AI Resume
                         </a>
                     </div>
                 </div>

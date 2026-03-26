@@ -59,7 +59,7 @@ export default function FeaturesSection() {
                         color: '#f4ede6', opacity: 0.8, fontSize: '1.1rem', fontWeight: 400,
                         lineHeight: 1.6, fontFamily: "'Outfit', sans-serif", maxWidth: '500px', margin: 0,
                     }}>
-                        I specialize in building smart systems with **LLMs** and **Computer Vision**. From data pipelines to live deployments, I turn complex AI research into real-world impact.
+                        I specialize in building production-ready systems with **LLMs** and **Agentic Workflows**. From scalable backend pipelines to real-world deployments, I turn complex AI research into tangible business impact.
                     </p>
 
                     {/* Step pills */}

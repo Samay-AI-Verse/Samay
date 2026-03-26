@@ -118,22 +118,5 @@ export function useCurtainGsap(showContent) {
                 ease: "power3.inOut",
             }, "open1");
 
-        // ── Contact section scroll-in ─────────────────────────────────────────
-        gsap.fromTo(
-            ".footer-anim",
-            { y: 50, opacity: 0 },
-            {
-                scrollTrigger: {
-                    trigger: "#footer-section",
-                    start: "top 85%",
-                    toggleActions: "play reverse play reverse",
-                },
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                stagger: 0.15,
-                ease: "power2.out",
-            }
-        );
     }, [showContent]);
 }

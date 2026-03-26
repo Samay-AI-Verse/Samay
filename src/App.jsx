@@ -22,6 +22,7 @@ import BlackSection from "./components/sections/BlackSection";
 import InnovationSection from "./components/sections/InnovationSection";
 import ProjectSection from "./components/sections/ProjectSection";
 import CertificationsSection from "./components/sections/CertificationsSection";
+import CrewSection from "./components/sections/CrewSection";
 import FooterSection from "./components/sections/FooterSection";
 
 /* ── Global styles & fonts ── */
@@ -69,6 +70,7 @@ export default function App() {
         <ProjectSection />
 
         <CertificationsSection />
+        <CrewSection />
         <FooterSection />
       </div>
       <Sidebar isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
