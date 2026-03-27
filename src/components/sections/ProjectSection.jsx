@@ -102,12 +102,12 @@ export default function ProjectSection() {
                 ))}
             </div>
 
-            {/* ── Mobile: compact stacked cards ── */}
-            <div className="md:hidden flex flex-col gap-5 px-5 mob-stagger">
+            {/* ── Mobile: horizontal swipe ── */}
+            <div className="md:hidden flex overflow-x-auto pb-10 px-5 gap-5 no-scrollbar snap-x snap-mandatory">
                 {PROJECTS.map((proj, i) => (
                     <div
                         key={i}
-                        className="mob-anim group relative bg-[#151515] border border-white/5 rounded-2xl overflow-hidden active:border-[#e87532]/40 transition-all duration-300 shadow-lg"
+                        className="mob-anim group relative bg-[#151515] border border-white/5 rounded-2xl overflow-hidden active:border-[#e87532]/40 transition-all duration-300 shadow-lg min-w-[280px] snap-center"
                     >
                         {/* Image */}
                         <div className="relative h-44 w-full overflow-hidden bg-[#1a1a1a]">
@@ -125,10 +125,10 @@ export default function ProjectSection() {
                         {/* Content */}
                         <div className="p-5">
                             <h3 className="text-base font-outfit font-black mb-2">{proj.title}</h3>
-                            <p className="text-xs opacity-50 leading-relaxed mb-4 line-clamp-2">{proj.desc}</p>
+                            <p className="text-xs opacity-50 leading-relaxed mb-4 line-clamp-2 h-[2.5rem]">{proj.desc}</p>
                             <div className="flex items-center justify-between gap-3 pt-4 border-t border-white/5">
                                 <div className="flex flex-wrap gap-1.5">
-                                    {proj.tags.map(tag => (
+                                    {proj.tags.slice(0, 2).map(tag => (
                                         <span key={tag} className="text-[0.6rem] font-bold px-2 py-0.5 bg-white/5 rounded-full border border-white/10 opacity-70">{tag}</span>
                                     ))}
                                 </div>
@@ -140,6 +140,21 @@ export default function ProjectSection() {
                         </div>
                     </div>
                 ))}
+
+                {/* 'See All' Card */}
+                <div className="mob-anim flex-shrink-0 w-[180px] snap-center flex items-center justify-center">
+                    <a 
+                        href="https://github.com/Samay-AI-Verse" 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="flex flex-col items-center gap-3 group"
+                    >
+                        <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-active:bg-[#e87532] transition-all">
+                            <i className="ri-arrow-right-line text-xl opacity-60 group-active:opacity-100" />
+                        </div>
+                        <span className="text-[0.65rem] font-black uppercase tracking-[0.2em] opacity-40 group-active:opacity-100 transition-all">See All</span>
+                    </a>
+                </div>
             </div>
         </section>
     );

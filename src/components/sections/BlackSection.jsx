@@ -88,8 +88,8 @@ export default function BlackSection() {
                 </div>
             </div>
 
-            {/* ── MOBILE LAYOUT — Marquee Ticker ── */}
-            <div className="md:hidden py-14 border-t border-b border-[#e87532]/10 overflow-hidden relative">
+            {/* ── MOBILE LAYOUT — hidden for now ── */}
+            <div className="hidden py-14 border-t border-b border-[#e87532]/10 overflow-hidden relative">
                 {/* Glow */}
                 <div className="absolute inset-0 pointer-events-none" style={{
                     background: 'radial-gradient(ellipse at 50% 50%, rgba(232,117,50,0.06) 0%, transparent 70%)',

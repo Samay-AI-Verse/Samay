@@ -82,43 +82,43 @@ export default function CrewSection() {
                                 transition={{ duration: 0.35 }}
                                 className="max-w-[600px]"
                             >
-                                <div className="flex items-center gap-2 mb-2">
-                                    <i className="ri-map-pin-line text-[#e87532] text-sm" />
-                                    <span className="text-[0.6rem] font-bold tracking-widest text-[#e87532]/70 uppercase">{HIGHLIGHTS[index].location}</span>
+                                <div className="flex items-center gap-1.5 mb-1">
+                                    <i className="ri-map-pin-line text-[#e87532] text-[0.65rem] md:text-sm" />
+                                    <span className="text-[0.5rem] md:text-[0.6rem] font-bold tracking-widest text-[#e87532]/70 uppercase">{HIGHLIGHTS[index].location}</span>
                                 </div>
-                                <h3 className="text-xl md:text-3xl font-outfit font-black text-white mb-2 uppercase tracking-tight">{HIGHLIGHTS[index].title}</h3>
+                                <h3 className="text-sm md:text-3xl font-outfit font-black text-white mb-1 uppercase tracking-tight">{HIGHLIGHTS[index].title}</h3>
                             </motion.div>
                         </AnimatePresence>
                     </div>
 
-                    {/* Dot indicators (mobile) + arrow buttons (both) */}
-                    <div className="flex items-center justify-between mt-4">
+                    {/* Dot indicators + arrow buttons */}
+                    <div className="flex items-center justify-between mt-2 md:mt-4">
                         {/* Dots */}
-                        <div className="flex gap-1.5">
+                        <div className="flex gap-1">
                             {HIGHLIGHTS.map((_, i) => (
                                 <button
                                     key={i}
                                     onClick={() => setIndex(i)}
                                     className="transition-all duration-300"
                                     style={{
-                                        width: i === index ? '20px' : '6px',
-                                        height: '6px',
-                                        borderRadius: '3px',
+                                        width: i === index ? '14px' : '4px',
+                                        height: '4px',
+                                        borderRadius: '2px',
                                         background: i === index ? '#e87532' : 'rgba(255,255,255,0.3)',
                                     }}
                                 />
                             ))}
                         </div>
 
-                        {/* Arrow buttons */}
-                        <div className="flex gap-3">
+                        {/* Arrow buttons — small on mobile */}
+                        <div className="flex gap-2">
                             <button onClick={(e) => { e.stopPropagation(); prev(); }}
-                                className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-[#e87532] active:bg-[#e87532] transition-all">
-                                <i className="ri-arrow-left-s-line text-xl" />
+                                className="w-7 h-7 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:bg-[#e87532] active:bg-[#e87532] transition-all">
+                                <i className="ri-arrow-left-s-line text-sm md:text-xl" />
                             </button>
                             <button onClick={(e) => { e.stopPropagation(); next(); }}
-                                className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-white hover:bg-[#e87532] active:bg-[#e87532] transition-all">
-                                <i className="ri-arrow-right-s-line text-xl" />
+                                className="w-7 h-7 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:bg-[#e87532] active:bg-[#e87532] transition-all">
+                                <i className="ri-arrow-right-s-line text-sm md:text-xl" />
                             </button>
                         </div>
                     </div>

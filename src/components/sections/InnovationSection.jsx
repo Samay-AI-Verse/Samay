@@ -63,13 +63,28 @@ export default function InnovationSection() {
                 ))}
             </div>
 
-            {/* ── Mobile: vertical stacked cards with stagger ── */}
-            <div className="md:hidden flex flex-col gap-6 px-5 mob-stagger">
+            {/* ── Mobile: horizontal swipe ── */}
+            <div className="md:hidden flex overflow-x-auto pb-10 px-5 gap-6 no-scrollbar snap-x snap-mandatory">
                 {INNOVATIONS.map((item, i) => (
-                    <div key={i} className="mob-anim w-full">
+                    <div key={i} className="mob-anim flex-shrink-0 w-[280px] snap-center">
                         <MobileProjectCard {...item} />
                     </div>
                 ))}
+
+                {/* 'See All' Card */}
+                <div className="mob-anim flex-shrink-0 w-[180px] snap-center flex items-center justify-center">
+                    <a 
+                        href="https://github.com/Samay-AI-Verse" 
+                        target="_blank" 
+                        rel="noreferrer"
+                        className="flex flex-col items-center gap-3 group"
+                    >
+                        <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center bg-white/5 group-active:bg-[#e87532] transition-all">
+                            <i className="ri-arrow-right-line text-xl opacity-60 group-active:opacity-100" />
+                        </div>
+                        <span className="text-[0.65rem] font-black uppercase tracking-[0.2em] opacity-40 group-active:opacity-100 transition-all">See All</span>
+                    </a>
+                </div>
             </div>
         </section>
     );

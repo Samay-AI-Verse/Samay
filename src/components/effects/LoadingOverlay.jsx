@@ -20,7 +20,7 @@ export default function LoadingOverlay({ onComplete }) {
         const tl = gsap.timeline();
 
         // 1 — Stroke reveals
-        tl.fromTo('.loading-text-stroke', 
+        tl.fromTo('.loading-text-stroke',
             { strokeDashoffset: 1000, strokeDasharray: 1000 },
             { strokeDashoffset: 0, duration: 2, ease: 'power2.inOut' }
         );
@@ -44,7 +44,7 @@ export default function LoadingOverlay({ onComplete }) {
                 }
             },
         });
-    }, []); 
+    }, []);
 
     return (
         <div
@@ -67,12 +67,12 @@ export default function LoadingOverlay({ onComplete }) {
                         <g className="vi-mask-group">
                             <text
                                 x="50%" y="52%"
-                                fontSize="120"
+                                fontSize="95"
                                 textAnchor="middle"
                                 dominantBaseline="middle"
                                 fontFamily="'Outfit', sans-serif"
                                 fontWeight="900"
-                                letterSpacing="15"
+                                letterSpacing="8"
                                 fill="none"
                                 stroke="black"
                                 strokeWidth="2"
