@@ -11,22 +11,33 @@ export function useBlackSectionGsap(showContent) {
     useGSAP(() => {
         if (!showContent) return;
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "#black-ai-section",
-                start: "top top",
-                end: "+=120%",
-                scrub: 1,
-                pin: true,
-                anticipatePin: 1,
-            }
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 768px)", () => {
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: "#black-ai-section",
+                    start: "top top",
+                    end: "+=120%",
+                    scrub: 1,
+                    pin: true,
+                    anticipatePin: 1,
+                }
+            });
+
+            // Set initial state of the fill to 0 height
+            gsap.set("#ai-fill-wrapper", { height: "0%" });
+
+            // Animate up to 100% height to reveal the fully filled graphic
+            tl.to("#ai-fill-wrapper", { height: "100%", ease: "none" });
+
+            return () => {};
         });
 
-        // Set initial state of the fill to 0 height
-        gsap.set("#ai-fill-wrapper", { height: "0%" });
-
-        // Animate up to 100% height to reveal the fully filled graphic
-        tl.to("#ai-fill-wrapper", { height: "100%", ease: "none" });
+        mm.add("(max-width: 767px)", () => {
+            // Ensure the fill is visible on mobile by default since we remove the scrub
+            gsap.set("#ai-fill-wrapper", { height: "100%" });
+        });
 
     }, [showContent]);
 }

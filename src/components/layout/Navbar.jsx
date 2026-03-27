@@ -71,7 +71,7 @@ export default function Navbar({ onMenuClick, onBookDemo }) {
             </div>
 
             {/* Centered Logo on Scroll */}
-            <div 
+            <div
                 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
                 style={{
                     opacity: scrolled ? 1 : 0,
@@ -94,7 +94,17 @@ export default function Navbar({ onMenuClick, onBookDemo }) {
             </div>
 
             <div className="hidden md:flex items-center gap-[32px]">
-                <a href="#footer-section" className="nav-link">CONTACT</a>
+                <a
+                    href="#footer-section"
+                    className="nav-link"
+                    onClick={(e) => {
+                        e.preventDefault();
+                        const target = document.querySelector("#footer-section");
+                        if (target) target.scrollIntoView({ behavior: "smooth" });
+                    }}
+                >
+                    CONTACT
+                </a>
             </div>
         </div>
     );

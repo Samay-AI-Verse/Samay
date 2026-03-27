@@ -46,16 +46,16 @@ export default function CertificationsSection() {
             {/* Background decorative glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-[#e87532]/5 blur-[150px] rounded-full pointer-events-none" />
 
-            <div className="max-w-[1400px] mx-auto px-6 mb-16 flex flex-col md:flex-row items-end justify-between gap-8 relative z-10">
-                <div className="text-left">
+            <div className="max-w-[1400px] mx-auto px-5 md:px-6 mb-10 md:mb-16 flex flex-col md:flex-row items-end justify-between gap-6 md:gap-8 relative z-10">
+                <div className="mob-anim text-left">
                     <span className="text-[#e87532] font-outfit font-bold tracking-[0.4em] uppercase text-[0.65rem] opacity-80">Credentials</span>
-                    <h2 className="text-4xl md:text-6xl font-outfit font-black mt-3 tracking-tight leading-none">
+                    <h2 className="text-3xl md:text-6xl font-outfit font-black mt-3 tracking-tight leading-none">
                         Verified <span className="text-[#e87532]">Expertise</span>
                     </h2>
                 </div>
                 
-                {/* Navigation Arrows */}
-                <div className="flex gap-4">
+                {/* Navigation Arrows — Desktop only */}
+                <div className="hidden md:flex gap-4">
                     <button 
                         onClick={() => scroll("left")}
                         className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center hover:bg-[#e87532] hover:border-[#e87532] transition-all group"
@@ -74,14 +74,14 @@ export default function CertificationsSection() {
             {/* Horizontal Slider */}
             <div 
                 ref={scrollRef}
-                className="flex gap-8 overflow-x-auto pb-12 px-6 md:px-[calc((100vw-1400px)/2+24px)] snap-x no-scrollbar scroll-smooth"
+                className="flex gap-5 md:gap-8 overflow-x-auto pb-10 md:pb-12 px-5 md:px-[calc((100vw-1400px)/2+24px)] snap-x no-scrollbar scroll-smooth"
                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
                 {CERTS.map((cert, i) => (
                     <div
                         key={i}
                         onClick={() => setSelectedCert(cert)}
-                        className="flex-shrink-0 w-[280px] md:w-[400px] snap-center cursor-pointer group"
+                        className="flex-shrink-0 w-[240px] md:w-[400px] snap-center cursor-pointer group"
                     >
                         <div className="relative aspect-[4/3] rounded-3xl overflow-hidden border border-white/5 bg-white/[0.02] backdrop-blur-sm group-hover:border-[#e87532]/40 transition-all duration-700 shadow-2xl">
                             <img

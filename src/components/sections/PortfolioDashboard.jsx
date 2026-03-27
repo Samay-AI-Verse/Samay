@@ -62,34 +62,34 @@ export default function PortfolioDashboard() {
                         />
                     </div>
 
-                            {/* Footer: Professional Visibility Hub */}
+                    {/* Footer: Professional Visibility Hub */}
                     <div className="mt-6 pt-6 border-t border-white/10 flex items-center justify-between">
                         <span className="text-[0.6rem] font-bold text-white/30 tracking-widest uppercase italic">Presence Hub</span>
                         <div className="flex gap-2">
                             {[
                                 { icon: "ri-github-line", name: "GitHub", url: "https://github.com/Samay-AI-Verse" },
                                 { icon: "ri-linkedin-line", name: "LinkedIn", url: "https://linkedin.com/in/samay-powade" },
-                                { 
-                                    name: "HuggingFace", 
-                                    url: "https://huggingface.co/Samay-AI-Verse", 
+                                {
+                                    name: "HuggingFace",
+                                    url: "https://huggingface.co/Samay-AI-Verse",
                                     customIcon: (
                                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M16.51 10.15a2.15 2.15 0 1 1-2.15-2.15 2.15 2.15 0 0 1 2.15 2.15zm-8.6 0a2.15 2.15 0 1 1-2.15-2.15 2.15 2.15 0 0 1 2.15 2.15zm6.81 4.57c0 1.4-1.12 2.53-2.52 2.53a2.53 2.53 0 0 1-2.52-2.53h5.04zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+                                            <path d="M16.51 10.15a2.15 2.15 0 1 1-2.15-2.15 2.15 2.15 0 0 1 2.15 2.15zm-8.6 0a2.15 2.15 0 1 1-2.15-2.15 2.15 2.15 0 0 1 2.15 2.15zm6.81 4.57c0 1.4-1.12 2.53-2.52 2.53a2.53 2.53 0 0 1-2.52-2.53h5.04zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" />
                                         </svg>
                                     )
                                 },
-                                { 
-                                    name: "LeetCode", 
-                                    url: "https://leetcode.com/samay-ai", 
+                                {
+                                    name: "LeetCode",
+                                    url: "https://leetcode.com/samay-ai",
                                     customIcon: (
                                         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M22 14.355c0-.742-.564-1.346-1.26-1.346H10.691c-.71 0-1.29.604-1.29 1.346s.58 1.346 1.29 1.346h10.05c.696 0 1.259-.604 1.259-1.346zM15.717 6.353c0-.663-.525-1.2-1.171-1.2H4.444c-.647 0-1.172.537-1.172 1.2 0 .663.525 1.2 1.172 1.2h10.102c.646 0 1.171-.537 1.171-1.2zM22 21.012c0-.742-.564-1.346-1.26-1.346H4.444c-.71 0-1.29.604-1.29 1.346s.58 1.346 1.29 1.346h16.296c.696 0 1.26-.604 1.26-1.346zM15.717 14.355c0-.663-.525-1.2-1.171-1.2H4.444c-.647 0-1.172.537-1.172 1.2 0 .663.525 1.2 1.172 1.2h10.102c.646 0 1.171-.537 1.171-1.2z"/>
+                                            <path d="M22 14.355c0-.742-.564-1.346-1.26-1.346H10.691c-.71 0-1.29.604-1.29 1.346s.58 1.346 1.29 1.346h10.05c.696 0 1.259-.604 1.259-1.346zM15.717 6.353c0-.663-.525-1.2-1.171-1.2H4.444c-.647 0-1.172.537-1.172 1.2 0 .663.525 1.2 1.172 1.2h10.102c.646 0 1.171-.537 1.171-1.2zM22 21.012c0-.742-.564-1.346-1.26-1.346H4.444c-.71 0-1.29.604-1.29 1.346s.58 1.346 1.29 1.346h16.296c.696 0 1.26-.604 1.26-1.346zM15.717 14.355c0-.663-.525-1.2-1.171-1.2H4.444c-.647 0-1.172.537-1.172 1.2 0 .663.525 1.2 1.172 1.2h10.102c.646 0 1.171-.537 1.171-1.2z" />
                                         </svg>
                                     )
                                 },
                                 { icon: "ri-instagram-line", name: "Instagram", url: "#" },
                             ].map((social) => (
-                                <a 
+                                <a
                                     key={social.name}
                                     href={social.url}
                                     target="_blank"

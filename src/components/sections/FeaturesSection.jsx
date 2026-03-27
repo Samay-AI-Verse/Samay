@@ -3,16 +3,22 @@ import PortfolioDashboard from "./PortfolioDashboard";
 
 /**
  * FeaturesSection — LAYER 2 (z-[60])
+ * Desktop: absolute overlay with GSAP curtain reveal (opacity/transform set by hook)
+ * Mobile: normal flow section, visible by default, CSS mob-anim entrance
  */
 export default function FeaturesSection() {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+
     return (
         <div
             id="features-section"
-            className="features-inner absolute inset-0 z-[60] flex items-center justify-center overflow-hidden"
+            className="features-inner relative md:absolute inset-0 z-[60] flex items-center justify-center min-h-screen py-20 md:py-0 overflow-hidden"
             style={{
-                opacity: 0,
-                transform: 'translateY(20px)',
-                pointerEvents: 'none',
+                /* Desktop: GSAP controls opacity/transform — start hidden */
+                /* Mobile: always visible, no GSAP interference */
+                opacity: isMobile ? 1 : 0,
+                transform: isMobile ? 'none' : 'translateY(20px)',
+                pointerEvents: isMobile ? 'auto' : 'none',
                 background: 'linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%)',
             }}
         >
@@ -25,10 +31,10 @@ export default function FeaturesSection() {
                 borderRadius: '50%', pointerEvents: 'none',
             }} />
 
-            <div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-16 px-10">
+            <div className="relative z-10 container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-16 px-6 md:px-10">
 
                 {/* ── Left Copy ── */}
-                <div className="text-left space-y-4">
+                <div className="mob-anim text-left space-y-4">
                     <div style={{ margin: '0 0 0px' }}>
                         <span style={{
                             fontFamily: "'Outfit', sans-serif", fontWeight: 900,
@@ -48,7 +54,7 @@ export default function FeaturesSection() {
 
                     <h2 style={{
                         fontFamily: "'Outfit', sans-serif", fontWeight: 900,
-                        fontSize: 'clamp(2rem, 4.5vw, 3.5rem)',
+                        fontSize: 'clamp(1.8rem, 4.5vw, 3.5rem)',
                         color: '#f4ede6', margin: '0 0 20px 0', lineHeight: 1.1, letterSpacing: '-0.02em',
                     }}>
                         Building Intelligence.<br />
@@ -56,10 +62,10 @@ export default function FeaturesSection() {
                     </h2>
 
                     <p style={{
-                        color: '#f4ede6', opacity: 0.8, fontSize: '1.1rem', fontWeight: 400,
+                        color: '#f4ede6', opacity: 0.8, fontSize: 'clamp(0.85rem, 1.1vw, 1.1rem)', fontWeight: 400,
                         lineHeight: 1.6, fontFamily: "'Outfit', sans-serif", maxWidth: '500px', margin: 0,
                     }}>
-                        I specialize in building production-ready systems with **LLMs** and **Agentic Workflows**. From scalable backend pipelines to real-world deployments, I turn complex AI research into tangible business impact.
+                        I specialize in building production-ready systems with LLMs and Agentic Workflows. From scalable backend pipelines to real-world deployments, I turn complex AI research into tangible business impact.
                     </p>
 
                     {/* Step pills */}
@@ -90,8 +96,10 @@ export default function FeaturesSection() {
                     </div>
                 </div>
 
-                {/* ── Right: Creative Portfolio Stats ── */}
-                <PortfolioDashboard />
+                {/* ── Right: Portfolio Dashboard ── */}
+                <div className="mob-anim">
+                    <PortfolioDashboard />
+                </div>
 
             </div>
         </div>

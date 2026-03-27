@@ -5,7 +5,8 @@ import LightingEffect from "../effects/LightingEffect";
 export default function LandingHero() {
   return (
     <div
-      className="landing-content absolute inset-0 z-10 overflow-hidden"
+      id="logo-scene"
+      className="landing-content relative md:absolute inset-0 z-10 w-full h-screen overflow-hidden"
       style={{ background: 'linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%)' }}
     >
       <div className="main w-full h-full origin-center">
@@ -31,7 +32,7 @@ export default function LandingHero() {
             borderRadius: '50%', pointerEvents: 'none', zIndex: 1,
           }} />
 
-          {/* Single BG Image Overlay - Optimized for "Full Image" view */}
+          {/* Single BG Image Overlay */}
           <div
             style={{
               position: 'absolute',
@@ -47,8 +48,8 @@ export default function LandingHero() {
             }}
           />
 
-          {/* Giant brand title - Centered */}
-          <div className="hero-text" style={{
+          {/* Giant brand title - Centered (desktop unchanged) */}
+          <div className="hero-text hidden md:block" style={{
             position: 'absolute',
             top: '42%',
             left: '50%',
@@ -81,8 +82,64 @@ export default function LandingHero() {
             </p>
           </div>
 
-          {/* Relocated Taglines - Bottom Right */}
-          <div className="absolute bottom-[8%] right-[5%] z-10 text-right space-y-1 opacity-60">
+          {/* ── MOBILE HERO LAYOUT ── */}
+          <div className="md:hidden flex flex-col items-center justify-center h-full relative z-10 px-6 text-center">
+            {/* Status pill */}
+            <div className="mob-anim mob-scale flex items-center gap-2 px-4 py-2 rounded-full border border-[#e87532]/30 bg-[#e87532]/10 backdrop-blur-sm mb-8">
+              <span className="mob-pulse-dot w-1.5 h-1.5 rounded-full bg-[#e87532] block" />
+              <span style={{ color: '#e87532', fontSize: '0.6rem', fontWeight: 800, letterSpacing: '0.2em', textTransform: 'uppercase' }}>
+                AI Engineer · Open To Work
+              </span>
+            </div>
+
+            {/* Big name */}
+            <h1 className="mob-anim" style={{
+              fontFamily: "'Outfit', sans-serif", fontWeight: 900,
+              fontSize: 'clamp(4.5rem, 22vw, 8rem)',
+              color: '#f4ede6', margin: 0, lineHeight: 0.88, letterSpacing: '-0.04em',
+              filter: 'drop-shadow(0 8px 32px rgba(0,0,0,0.6))'
+            }}>
+              Samay
+            </h1>
+
+            {/* Subtitle */}
+            <p className="mob-anim" style={{
+              fontFamily: "'Outfit', sans-serif", fontWeight: 700,
+              fontSize: '0.75rem',
+              color: '#e87532',
+              textTransform: 'uppercase',
+              letterSpacing: '0.35em',
+              marginTop: '0.75rem',
+              opacity: 0.85,
+            }}>
+              AI Engineer
+            </p>
+
+            {/* Tagline */}
+            <p className="mob-anim mt-6" style={{
+              color: '#f4ede6', opacity: 0.55, fontSize: '0.85rem',
+              lineHeight: 1.6, fontFamily: "'Outfit', sans-serif",
+              maxWidth: '280px',
+            }}>
+              Crafting intelligent systems — from LLMs to production pipelines.
+            </p>
+
+            {/* Skill pills */}
+            <div className="mob-anim mob-stagger flex flex-wrap justify-center gap-2 mt-6">
+              {['LLM Pipelines', 'RAG Systems', 'FastAPI', 'Agentic AI'].map(tag => (
+                <span key={tag} style={{
+                  fontSize: '0.65rem', fontWeight: 700,
+                  padding: '5px 12px',
+                  background: 'rgba(232,117,50,0.08)',
+                  border: '1px solid rgba(232,117,50,0.2)',
+                  borderRadius: '999px', color: '#f4ede6', letterSpacing: '0.04em',
+                }}>{tag}</span>
+              ))}
+            </div>
+          </div>
+
+          {/* Relocated Taglines - Bottom Right (desktop only) */}
+          <div className="hidden md:block absolute bottom-[8%] right-[5%] z-10 text-right space-y-1 opacity-60">
             <p style={{
               color: '#e87532', fontSize: '0.65rem', fontWeight: 700,
               letterSpacing: '0.15em', textTransform: 'uppercase', margin: 0

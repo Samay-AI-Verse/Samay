@@ -11,9 +11,18 @@ export default function Sidebar({ isOpen, onClose }) {
     const navLinks = [
         { label: "Home", href: "#logo-scene" },
         { label: "Experience", href: "#features-section" },
-        { label: "Projects", href: "#delivery-section" },
+        { label: "Projects", href: "#project-section" },
         { label: "Contact", href: "#footer-section" },
     ];
+
+    const handleNavClick = (e, href) => {
+        e.preventDefault();
+        onClose();
+        const target = document.querySelector(href);
+        if (target) {
+            target.scrollIntoView({ behavior: "smooth" });
+        }
+    };
 
     /* ── GSAP open / close ── */
     useEffect(() => {
@@ -89,7 +98,7 @@ export default function Sidebar({ isOpen, onClose }) {
                                 key={link.label}
                                 href={link.href}
                                 ref={el => (itemsRef.current[i] = el)}
-                                onClick={onClose}
+                                onClick={(e) => handleNavClick(e, link.href)}
                                 style={{
                                     display: "block",
                                     color: "#f4ede6",

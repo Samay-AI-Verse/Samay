@@ -1,0 +1,90 @@
+/* ============================================================
+   MOBILE ANIMATIONS — max-width 767px only
+   Desktop (≥ 768px) is completely unaffected.
+   Triggered by IntersectionObserver adding .mob-visible class.
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+  /* ── Base hidden state ── */
+  .mob-anim {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  .mob-anim.mob-from-left {
+    transform: translateX(-28px);
+  }
+
+  .mob-anim.mob-from-right {
+    transform: translateX(28px);
+  }
+
+  .mob-anim.mob-scale {
+    transform: scale(0.93);
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  /* ── Visible state (added by IntersectionObserver) ── */
+  .mob-anim.mob-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* ── Stagger delays (nth-child on direct parent) ── */
+  .mob-stagger > *:nth-child(1) { transition-delay: 0ms; }
+  .mob-stagger > *:nth-child(2) { transition-delay: 80ms; }
+  .mob-stagger > *:nth-child(3) { transition-delay: 160ms; }
+  .mob-stagger > *:nth-child(4) { transition-delay: 240ms; }
+  .mob-stagger > *:nth-child(5) { transition-delay: 320ms; }
+  .mob-stagger > *:nth-child(6) { transition-delay: 400ms; }
+  .mob-stagger > *:nth-child(7) { transition-delay: 480ms; }
+  .mob-stagger > *:nth-child(8) { transition-delay: 560ms; }
+
+  /* ── Marquee ticker (BlackSection mobile alternative) ── */
+  @keyframes mob-marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .mob-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: mob-marquee 22s linear infinite;
+  }
+
+  /* ── Shimmer line ── */
+  @keyframes mob-shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(300%); }
+  }
+
+  .mob-shimmer::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(232,117,50,0.25) 50%, transparent 100%);
+    animation: mob-shimmer 2.5s ease-in-out infinite;
+  }
+
+  /* ── Pulse dot ── */
+  @keyframes mob-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50%       { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  .mob-pulse-dot {
+    animation: mob-pulse 2s ease-in-out infinite;
+  }
+
+  /* ── Float card (subtle hover lift) ── */
+  @keyframes mob-float {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-6px); }
+  }
+}

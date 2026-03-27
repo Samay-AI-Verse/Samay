@@ -7,6 +7,7 @@ import { useLenis } from "./hooks/useLenis";
 import { useCurtainGsap } from "./hooks/useCurtainGsap";
 import { useSectionAnimations } from "./hooks/useSectionAnimations";
 import { useBlackSectionGsap } from "./hooks/useBlackSectionGsap";
+import { useMobileIntersect } from "./hooks/useMobileIntersect";
 
 /* ── Layout ── */
 import LoadingOverlay from "./components/effects/LoadingOverlay";
@@ -32,6 +33,7 @@ import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/700.css";
 import "@fontsource/outfit/900.css";
 import "./App.css";
+import "./styles/mobile-animations.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -44,6 +46,7 @@ export default function App() {
   useCurtainGsap(showContent);
   useSectionAnimations(showContent);
   useBlackSectionGsap(showContent);
+  useMobileIntersect(showContent); // mobile-only IntersectionObserver anims
 
   return (
     <div className="bg-[#050505] min-h-screen text-[#f4ede6]">
@@ -54,7 +57,7 @@ export default function App() {
 
       <div className="relative">
         {/* Hero & Intro block */}
-        <div className="animation-block relative h-screen w-full overflow-hidden">
+        <div className="animation-block relative min-h-screen md:h-screen w-full md:overflow-hidden">
           <LandingHero />
           <FeaturesSection />
         </div>

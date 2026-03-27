@@ -1,5 +1,4 @@
 
-
 const NAV_COLS = [
     {
         heading: "Expertise",
@@ -42,23 +41,22 @@ export default function FooterSection() {
             background: "#0a0a0a",
             position: "relative",
             overflow: "hidden",
-            minHeight: "100vh",
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-between"
         }}>
 
-
-
-            <div className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.2fr] gap-10 px-6 py-12 md:px-[6vw] md:pt-[64px] md:pb-[48px]">
+            {/* ── Link Grid ── */}
+            {/* Mobile: 2 cols. Desktop: 4 cols with wider last col */}
+            <div className="grid grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1.2fr] gap-8 md:gap-10 px-5 py-10 md:px-[6vw] md:pt-[64px] md:pb-[48px]">
 
                 {NAV_COLS.map(col => (
-                    <div key={col.heading} className="footer-anim" style={{ position: "relative", zIndex: 10 }}>
-                        <p style={{ ...TEXT, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", margin: "0 0 18px", opacity: 0.5, color: "#e87532" }}>{col.heading}</p>
+                    <div key={col.heading} className="footer-anim mob-anim" style={{ position: "relative", zIndex: 10 }}>
+                        <p style={{ ...TEXT, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", margin: "0 0 14px", opacity: 0.5, color: "#e87532" }}>{col.heading}</p>
                         {col.links.map(link => (
                             <a key={link.name} href={link.href} target={link.href.startsWith('http') ? "_blank" : "_self"} style={{
-                                ...TEXT, display: "block", fontSize: "0.85rem", fontWeight: 500,
-                                textDecoration: "none", marginBottom: "10px", opacity: 0.75,
+                                ...TEXT, display: "block", fontSize: "0.82rem", fontWeight: 500,
+                                textDecoration: "none", marginBottom: "9px", opacity: 0.75,
                                 transition: "opacity 0.2s",
                             }}
                                 onMouseEnter={e => e.currentTarget.style.opacity = 1}
@@ -68,13 +66,14 @@ export default function FooterSection() {
                     </div>
                 ))}
 
-                <div className="footer-anim text-left lg:text-right" style={{ position: "relative", zIndex: 10 }}>
-                    <p style={{ ...TEXT, fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", opacity: 0.5, margin: "0 0 12px", lineHeight: 1.6 }}>
+                {/* Contact column — full width on mobile */}
+                <div className="footer-anim mob-anim col-span-2 lg:col-span-1 lg:text-right" style={{ position: "relative", zIndex: 10 }}>
+                    <p style={{ ...TEXT, fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", opacity: 0.5, margin: "0 0 10px", lineHeight: 1.6 }}>
                         READY TO COLLABORATE?<br />REACH OUT FOR AI INNOVATIONS:
                     </p>
                     <a href="mailto:samaypowade9@gmail.com" style={{
-                        ...TEXT, fontSize: "clamp(0.9rem, 1.8vw, 1.4rem)", fontWeight: 700, textDecoration: "none",
-                        display: "block", marginBottom: "28px", transition: "color 0.2s",
+                        ...TEXT, fontSize: "clamp(0.85rem, 1.8vw, 1.4rem)", fontWeight: 700, textDecoration: "none",
+                        display: "block", marginBottom: "20px", transition: "color 0.2s",
                     }}
                         onMouseEnter={e => e.currentTarget.style.color = "#e87532"}
                         onMouseLeave={e => e.currentTarget.style.color = "#f4ede6"}
@@ -91,12 +90,11 @@ export default function FooterSection() {
                 </div>
             </div>
 
-
-
-            <div className="flex flex-col md:flex-row justify-between items-center gap-3 border-t border-[#e87532]/20 px-6 py-5 md:px-[6vw] relative z-10">
-                <p style={{ ...TEXT, fontSize: "0.65rem", opacity: 0.45, margin: 0 }}>© 2026 Samay.AI Portfolio</p>
-                <p style={{ ...TEXT, fontSize: "0.65rem", opacity: 0.45, margin: 0 }}>PRECISION & INNOVATION</p>
+            {/* ── Bottom Bar ── */}
+            <div className="flex flex-col md:flex-row justify-between items-center gap-2 border-t border-[#e87532]/20 px-5 py-4 md:px-[6vw] relative z-10">
+                <p style={{ ...TEXT, fontSize: "0.62rem", opacity: 0.4, margin: 0 }}>© 2026 Samay.AI Portfolio</p>
+                <p style={{ ...TEXT, fontSize: "0.62rem", opacity: 0.4, margin: 0 }}>PRECISION &amp; INNOVATION</p>
             </div>
-        </section >
+        </section>
     );
 }
