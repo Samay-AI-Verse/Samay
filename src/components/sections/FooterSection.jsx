@@ -23,8 +23,8 @@ const NAV_COLS = [
         links: [
             { name: "GitHub", href: "https://github.com/Samay-AI-Verse" },
             { name: "LinkedIn", href: "https://www.linkedin.com/in/samay-p-103259269" },
-            { name: "Hugging Face", href: "https://huggingface.co/Samay-AI-Verse" },
-            { name: "LeetCode", href: "https://leetcode.com/u/Samay-AI-Verse/" },
+            { name: "Hugging Face", href: "https://huggingface.co/Samay-AI" },
+            { name: "LeetCode", href: "https://leetcode.com/u/samay_powade/" },
             { name: "Instagram", href: "https://www.instagram.com/samay__.23/" },
         ],
     },
