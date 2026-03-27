@@ -78,7 +78,7 @@ export default function FooterSection() {
                         onMouseEnter={e => e.currentTarget.style.color = "#e87532"}
                         onMouseLeave={e => e.currentTarget.style.color = "#f4ede6"}
                     >
-                        samaypowade23@gmail.com
+                        samaypowade@gmail.com
                     </a>
 
                     <a href="https://www.linkedin.com/in/samay-p-103259269/" target="_blank" style={{ ...TEXT, fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", textDecoration: "none", opacity: 0.55, transition: "color 0.2s" }}

@@ -70,8 +70,8 @@ export default function CrewSection() {
                     </motion.div>
                 </AnimatePresence>
 
-                {/* Content Overlay */}
-                <div className="absolute inset-0 z-20 max-w-[1240px] mx-auto px-5 md:px-10 flex flex-col justify-end pb-8 md:pb-20">
+                {/* Content Overlay — moved lower on mobile */}
+                <div className="absolute inset-0 z-20 max-w-[1240px] mx-auto px-5 md:px-10 flex flex-col justify-end pb-3 md:pb-20">
                     <div className="relative">
                         <AnimatePresence mode="wait">
                             <motion.div
